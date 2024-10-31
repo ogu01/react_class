@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Form1 from "./Form1";
+import Form2 from "./Form2";
 function App() {
   const [count, setCount] = useState(0);
   const up = () => {
@@ -16,6 +17,7 @@ function App() {
       <button onClick={up}>up</button>
       <button onClick={down}>down</button>
       <Form1 />
+      <Form2 />
     </>
   );
 }
