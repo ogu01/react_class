@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Form1 from "./Form1";
 import Form2 from "./Form2";
+import ConditionalRendering from "./ConditionalRendering";
 function App() {
   const [count, setCount] = useState(0);
   const up = () => {
@@ -18,6 +19,7 @@ function App() {
       <button onClick={down}>down</button>
       <Form1 />
       <Form2 />
+      <ConditionalRendering />
     </>
   );
 }
