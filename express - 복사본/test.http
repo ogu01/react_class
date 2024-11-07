@@ -47,3 +47,8 @@ Content-Type: application/json; charset=UTF-8
     "capital":"서울",
     "population":12
 }
+
+###
+delete http://localhost:8000/nations/4
+
+

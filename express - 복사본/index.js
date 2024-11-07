@@ -101,3 +101,12 @@ app.put("/nations/:id", (req, res) => {
     res.status(200);
   });
 });
+
+//삭제기능
+app.delete("/nations/:id", (req, res) => {
+  const id = req.params.id;
+  const sql = "delete from nations_table where id = ?";
+  db.query(sql, [id], (err, results, fields) => {
+    console.log("err", err);
+  });
+});
