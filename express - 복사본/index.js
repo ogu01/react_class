@@ -91,3 +91,13 @@ app.post("/nations/save", (req) => {
     console.log("err", err);
   });
 });
+
+//수정기능
+app.put("/nations/:id", (req, res) => {
+  const { id, name, capital, population } = req.body;
+  const sql = "update nations_table set population = ? where id =?";
+  db.query(sql, [population, id], (err, results, fields) => {
+    console.log("err", err);
+    res.status(200);
+  });
+});

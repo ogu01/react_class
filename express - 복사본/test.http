@@ -37,3 +37,13 @@ Content-Type: application/json; charset=UTF-8
     "capital":"도쿄",
     "population":100000
 }
+
+###
+put http://localhost:8000/nations/1
+Content-Type: application/json; charset=UTF-8
+
+{   "id":1,
+    "name":"대한민국",
+    "capital":"서울",
+    "population":12
+}
