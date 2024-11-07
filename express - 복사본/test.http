@@ -24,3 +24,16 @@ Content-Type: application/json; charset=UTF-8
 
 ###
 get http://localhost:8000/nations/list
+
+###
+get http://localhost:8000/nations/1
+
+###
+post http://localhost:8000/nations/save
+Content-Type: application/json; charset=UTF-8
+
+{
+    "name":"일본",
+    "capital":"도쿄",
+    "population":100000
+}
