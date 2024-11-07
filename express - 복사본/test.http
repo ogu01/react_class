@@ -1,0 +1,26 @@
+get http://localhost:8000
+
+###
+get http://localhost:8000/hello
+
+
+###
+get http://localhost:8000/10
+
+###
+get http://localhost:8000/qs?p1=10&p2=aa
+
+###
+post http://localhost:8000/hello
+
+###
+post http://localhost:8000/post-req
+Content-Type: application/json; charset=UTF-8
+
+{
+    "name": "정승순",
+    "age": "20"
+}
+
+###
+get http://localhost:8000/nations/list
