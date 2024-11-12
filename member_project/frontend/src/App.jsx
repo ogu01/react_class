@@ -5,6 +5,7 @@ import "./App.css";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import Save from "./Save";
 import List from "./List";
+import Home from "./Home";
 import Header from "./Header";
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/Save" element={<Save />} />
           <Route path="/List" element={<List />} />
         </Routes>
