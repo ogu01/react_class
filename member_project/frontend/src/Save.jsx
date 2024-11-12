@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 const Save = () => {
+  const navigate = useNavigate();
   const [member, setMember] = useState({
     memberEmail: "",
     memberPassword: "",
@@ -24,6 +25,7 @@ const Save = () => {
       member: member,
     });
     console.log("res", res);
+    navigate("/");
   };
 
   return (
