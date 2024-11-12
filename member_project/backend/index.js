@@ -42,3 +42,11 @@ app.post("/member/save", (req, res) => {
     }
   );
 });
+
+app.get("/member/list", (req, res) => {
+  const sql = "select * from member_table";
+  db.query(sql, (err, results, fields) => {
+    console.log("results", results);
+    res.status(200).send(results);
+  });
+});
