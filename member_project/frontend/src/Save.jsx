@@ -1,59 +1,65 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import axios from "axios";
 
 const Save = () => {
-  const [member, setProfile] = useState({
-    id: "",
-    email: "",
-    password: "",
-    name: "",
-    mobile: "",
+  const [member, setMember] = useState({
+    memberEmail: "",
+    memberPassword: "",
+    memberName: "",
+    memberMobile: "",
   });
+
   const inputUpdate = (e) => {
-    //console.log(e.target);
     const { name, value } = e.target;
-    setProfile({
+    setMember({
       ...member,
       [name]: value,
     });
-    console.log(member);
   };
+
+  const memberSave = async (e) => {
+    e.preventDefault();
+    console.log(member);
+    let res = await axios.post("http://localhost:8000/member/save", {
+      member: member,
+    });
+    console.log("res", res);
+  };
+
   return (
     <>
-      <h2>save.jsx</h2>
-      <form>
-        아이디:{" "}
-        <input type="text" name="id" onChange={inputUpdate} value={member.id} />
-        <br />
-        이메일:{" "}
+      <h2>Save.jsx</h2>
+      <form onSubmit={memberSave}>
+        이메일:
         <input
           type="text"
-          name="email"
+          name="memberEmail"
+          value={member.memberEmail}
           onChange={inputUpdate}
-          value={member.email}
         />
         <br />
-        비밀번호:{" "}
+        비밀번호:
         <input
           type="text"
-          name="password"
+          name="memberPassword"
+          value={member.memberPassword}
           onChange={inputUpdate}
-          value={member.password}
         />
         <br />
-        이름:{" "}
+        이름:
         <input
           type="text"
-          name="name"
+          name="memberName"
+          value={member.memberName}
           onChange={inputUpdate}
-          value={member.name}
         />
         <br />
-        전화번호:{" "}
+        전화번호:
         <input
           type="text"
-          name="mobile"
+          name="memberMobile"
+          value={member.memberMobile}
           onChange={inputUpdate}
-          value={member.mobile}
         />
         <br />
         <input type="submit" value={"회원가입"} />
